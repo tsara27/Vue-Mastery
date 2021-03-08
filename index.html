@@ -10,10 +10,29 @@
   </head>
   <body>
     <div id="app">
-      <h1>Product goes here</h1>
+      <h1>{{ product }}</h1>
+      <p>{{ description }}</p>
+      <div class="product-image">
+        <a :href="url">
+          <img v-bind:src="image" alt="">
+        </a>
+      </div>
+      <!-- Conditional methods -->
+      <!-- <p v-if="inStock">In Stock</p>
+      <p v-else>Out of Stock</p> -->
+      <!-- <p v-show="inStock">In Stock</p>
+      <p v-show="!inStock">Out of Stock</p> -->
+      <p v-if="inventory > 10">In Stock</p>
+      <p v-else-if="inventory == 0">Out of Stock</p>
+      <p v-else>We only have {{ inventory }} left!</p>
+
+      <p v-show="onSale" class="red-color">On SALE!</p>
     </div>
 
     <!-- Import Js -->
     <script src="./main.js"></script>
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
   </body>
 </html>
