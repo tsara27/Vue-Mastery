@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <title>Vue Mastery</title>
     <!-- Import Styles -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/styles.css" />
     <!-- Import Vue.js -->
     <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
   </head>
   <body>
     <div id="app">
-      <h1>{{ product }}</h1>
-      <p>{{ description }}</p>
       <div class="product-image">
         <a :href="url">
           <img v-bind:src="image" alt="">
@@ -22,11 +22,20 @@
       <p v-else>Out of Stock</p> -->
       <!-- <p v-show="inStock">In Stock</p>
       <p v-show="!inStock">Out of Stock</p> -->
-      <p v-if="inventory > 10">In Stock</p>
-      <p v-else-if="inventory == 0">Out of Stock</p>
-      <p v-else>We only have {{ inventory }} left!</p>
+      <div class="product-info">
+        <h1>{{ product }}</h1>
+        <p>{{ description }}</p>
+        <p v-if="inventory > 10">In Stock</p>
+        <p v-else-if="inventory == 0">Out of Stock</p>
+        <p v-else>We only have {{ inventory }} left!</p>
 
-      <p v-show="onSale" class="red-color">On SALE!</p>
+        <p v-show="onSale" class="red-color">On SALE!</p>
+
+        <h2>Description</h2>
+
+        <p>Specifications:</p>
+        <li v-for="detail in details">{{ detail }}</li>
+      </div>
     </div>
 
     <!-- Import Js -->

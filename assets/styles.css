@@ -1,7 +1,7 @@
 body {
   background-color: #f2f2f2;
   margin: 0px;
-  font-family: tahoma;
+  font-family: Rubik;
   color: #282828;
 }
 
@@ -167,6 +167,20 @@ ul {
 
 .red-color {
   color: red;
+}
+
+#app {
+  display:grid;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+}
+
+.product-image {
+  justify-self: self-end;
+}
+
+.product-info {
+  justify-self: self-start;
 }
 
 @media only screen and (max-width: 600px) {
